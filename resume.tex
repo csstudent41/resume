@@ -1,12 +1,13 @@
-\documentclass[14pt]{extarticle}
+\documentclass[letterpaper,12pt]{extarticle}
 
 \usepackage{titlesec}
 \usepackage{titling}
-\usepackage[margin=1in]{geometry}
+\usepackage[margin=0.5in]{geometry}
 \usepackage{hyperref}
+\usepackage{multicol}
 
 \titleformat{\section}
-{\huge\bfseries\uppercase}
+{\Large\bfseries\uppercase}
 {}
 {0em}
 {}[\titlerule]
@@ -15,7 +16,7 @@
 {\bfseries\large}
 {}
 {0em}
-{\hspace{-1em}$\bullet$ }
+{$\bullet$ }
 
 \titleformat{\subsubsection}[runin]
 {\bfseries}
@@ -26,93 +27,78 @@
 \titlespacing{\subsubsection}
 {0em}{.25em}{1em}
 
-\renewcommand{\maketitle}{
-	\begin{center}
-		{\huge\bfseries
-		\theauthor}
-
-		\vspace{.25em}
-
-		R\'esum\'e\\
-		\url{https://vikas.rocks}
-	\end{center}
-}
-
 \newcommand\tab[1][1cm]{\hspace*{#1}}
+
+\newcommand{\organization}[4] {
+	\begin{tabular*}{\textwidth}{@{\extracolsep{\fill}}lr}
+		\textbf{\large#1} & #2 \\
+		\textit{#3} & \textit{#4} \\
+	\end{tabular*}\vspace{-10pt}
+}
 
 \title{R\'esum\'e}
 \author{Vikas Kushwaha}
 
 \begin{document}
 
-\maketitle
-
+\noindent
+\begin{tabular*}{\textwidth}{@{\extracolsep{\fill}}lcr}
+	\href{https://vikas.rocks}{\underline{vikas.rocks}} &
+	\href{https://vikas.rocks}{\Large\bfseries \theauthor} &
+	\href{tel:+917498130470}{+91 7498 1305 70} \\
+	Mumbai, Maharashtra &
+	(Student) \thetitle &
+	csstudent41@gmail.com
+\end{tabular*}
 
 \section{Technical Skills}
 
-\subsection{Work Flow}
-I don't use Windows Operating System very often but I don't mind working on it.
-\subsubsection{OS} Linux
-\subsubsection{Window Manager} i3
-\subsubsection{Text Editor} vim
-\subsubsection{Remote Management} ssh, tmux, git, rsync, syncthing
-
-\subsection{Languages}
-Languages are listed in order of competence.\\
-Notice this document is written in {\LaTeX}.
-\subsubsection{Programming}
-C, C++, Go, JavaScript
-\subsubsection{Scripting}
-Shell, Python, Awk, R
-\subsubsection{Markup}
-HTML, CSS, {\LaTeX}
+\begin{minipage}[t]{0.5\textwidth}
+	\subsection{Languages} Languages listed in decreasing order of competence.
+	\subsubsection{Programming} C/C++, Go, JavaScript
+	\subsubsection{Scripting} Shell, Python, Awk, R
+	\subsubsection{Markup} HTML, CSS, {\LaTeX}
+	\subsubsection{Database}
+	MySQL, Oracle, MongoDB
+\end{minipage}
+\hfill
+\vrule
+\hfill
+\begin{minipage}[t]{0.45\textwidth}
+	\subsection{Work Flow}
+	\subsubsection{OS} Arch Linux
+	\subsubsection{Window Manager} i3
+	\subsubsection{Text Editor} vim
+	\subsubsection{Remote Management} ssh, tmux, git, rsync, syncthing
+\end{minipage}
 
 
 \section{Education}
 
-\subsection{Degree}
-Currently pursuing B.Sc. in Computer Science from
-Annasaheb Vartak College, Vasai West, Mumbai, Maharashtra, 401 208.
-(\url{https://avc.ac.in})
+\organization
+{\href{https://avc.ac.in}{Annasaheb Vartak College}} {Vasai West, Mumbai}
+{B.Sc. Computer Science (ongoing)} {2022 - 2024}
 
 
-\section{Works}
+\section{Experience}
 
-\subsection{Websites}
-I have built some production ready websites, static as well as dynamic.\\
-\\
-Here's my personal website built by myself.
-It's build using hugo, a static site generator:-\\
-\begin{tabular}{l l}
-	URL: & \url{https://vikas.rocks} \\
-	Source: & \url{https://github.com/csstudent41/hugo-site} \\
-\end{tabular}
-\\
-\\
-I worked on organizing a tech fest event in my college.
-It was titled as 'BITS'.
-I and my friend built the landing page for BITS which was the gateway for user registrations :\\
-\begin{tabular}{l l}
-	URL: & \url{https://bits24.onrender.com}\\
-	Source: & \url{https://github.com/vtc-tech/vtc-tech.github.io}\\
-\end{tabular}
+\subsubsection{Web} I have some expreience in building static websites. I can build a python web server (using Flask) or a Go server (using net/http). I briefly touched AngularJS, Express and NodeJS and and can pick them up anytime when needed.
 
-\subsection{Linux}
-I am well versed in usage and management of the Linux Operating System.
-I am using it as my daily driver for over a half a decade now.
-You can find my Linux Configurations and scripts on GitHub:-\\
-\tab \url{https://github.com/csstudent41/voidrice}
+\subsubsection{Application} Have little experience in developing Python Tkinter application. Worked with Java Swing and Flutter during uni.
 
-\subsection{Scraping}
-I scraped my college's exam results which are rolled out in PDF format and
-turned it into friendly HTML tables showing final scores of each student in a single list.
-It's available on my website:-\\
-\tab \url{https://csstudent41.github.io/results}\\
-The raw PDF files are uploaded to Google Drive :-\\
-\tab \url{https://tinyurl.com/vartakdrive}\\
-The scripts used to scrape the PDF documents and build the HTML DOM are in my vartak-bin repository.
-It also contains some other stuff that I use to manage my college files generally.
-The files that we care about are named as vartak-results-*\\
-\tab \url{https://github.com/csstudent41/vartak-bin}\\
+\subsubsection{Linux} I use a linux computer on a daily basis. It's heavily customized by me. I use debian server on my RasberryPi.
+
+\subsubsection{Scripting} I have written a lot of shell scripts. I have done more scripting than programming.
+
+
+\section{Notable Projects}
+Most things here can be found on my GitHub page. (\url{https://github.com/csstudent41})
+
+\subsubsection{My Personal Website} Build by me (ofcourse), using Hugo. Link on top.
+
+\subsubsection{BITS24 Website}
+There was a Techfest event hosted in our college called BITS which was organised by us. Me and my friends build the website for BITS (January 2024). The website is hosted on onrender \underline{\url{https://bits24.onrender.com}} and it's source files are on our commitee's github account \underline{\url{https://github.com/vtc-tech/bits24}}.
+
+\subsubsection{Scraping Exam Results} I scraped my college exam result's PDF(s), extracted student's data and turned them into web pages (\underline{\url{https://vikas.rocks/results}}). Used awk and a bunch of shell scripts for this.
 
 \end{document}
